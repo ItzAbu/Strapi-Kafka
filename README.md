@@ -27,7 +27,7 @@ password: `Strapi1234`
 AKHQ UI
 -----------
 
-![image](https://github.com/user-attachments/assets/882fb7f7-497a-4cee-b342-fd15dcc84d35)
+![image](https://github.com/user-attachments/assets/6b488131-ea4d-4cf6-adc5-ea405a475476)
 
 ----------
 STRAPI UI
