@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "new_entry_pubs",
+  "info": {
+    "singularName": "new-entry-pub",
+    "pluralName": "new-entry-pubs",
+    "displayName": "New-Entry-Pub",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "avgPrice": {
+      "type": "decimal"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "error": {
+      "type": "boolean",
+      "default": false
+    },
+    "pub_id": {
+      "type": "integer"
+    }
+  }
+}
