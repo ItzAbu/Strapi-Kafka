@@ -19,17 +19,17 @@ password: `Strapi1234`
 //CONFIGURAZIONE SERVIZIO SSL
  1. Creare i certificati tramite `generatore.bat` -> cambiare `set PASSWORD=password123` la password che si vuole mettere
  2. Su strapi va sistemato l'accesso su kafka -> `my-project\src\api\new-entry-pub\services\new-entry-pub.js`
- 3. `const kafka = new Kafka({
-   clientId: 'js-client',
-  brokers: ['localhost:9093'],
-  ssl: {
-    rejectUnauthorized: true, 
-    ca: [fs.readFileSync('./../KafkaSetup/certs/ca.crt')], //<-- Sistema qui
-    key: fs.readFileSync('./../KafkaSetup/certs/server.key'), //<-- Sistema qui
-    cert: fs.readFileSync('./../KafkaSetup/certs/server.crt'), //<-- Sistema qui
-    servername: 'kafka'
-  }
-})`
+ 3. `const kafka = new Kafka({`
+   `clientId: 'js-client',`
+  `brokers: ['localhost:9093'],`
+  `ssl: {`
+    `rejectUnauthorized: true, `
+   ` ca: [fs.readFileSync('./../KafkaSetup/certs/ca.crt')], //<-- Sistema qui`
+    `key: fs.readFileSync('./../KafkaSetup/certs/server.key'), //<-- Sistema qui`
+    `cert: fs.readFileSync('./../KafkaSetup/certs/server.crt'), //<-- Sistema qui`
+    `servername: 'kafka'`
+ ` }`
+`})`
 
  STEP BY STEP 
  1. Avvia Kafka con AKHQ -> `cd ./kafkasetup & docker-compose up -d`
