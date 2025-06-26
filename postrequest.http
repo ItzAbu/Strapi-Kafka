@@ -1,5 +1,5 @@
 POST http://localhost:1337/api/pubs
-Authorization: Bearer 2fea720313eb0824e6a288bedabc448e65f36995a986e598abbdf57415b8cdf9bcf6ce9b7b81d75bb4c7fa00f711f983bd422facd43e5824d8bee34cf82c38a6ae50276a8854da6de1cb14272565865de32040abfeee8b5830e8b7d18558b5db8badfea75c0a3cb25d08036ed4b7389f9ba554cea72b84d09eb135cd1bc53af0
+Authorization: Bearer YOUR_API_TOKEN
 Content-Type: application/json
 
 {
