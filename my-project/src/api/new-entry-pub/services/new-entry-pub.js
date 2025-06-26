@@ -9,10 +9,18 @@ const { createCoreService } = require('@strapi/strapi').factories;
 const { Kafka } = require('kafkajs');
 const { keys } = require('../../../../config/middlewares');
 const { sendAt } = require('cron');
+const fs = require('fs');
 
 const kafka = new Kafka({
-  clientId: 'my-app',
-  brokers: ['localhost:9092']
+   clientId: 'js-client',
+  brokers: ['localhost:9093'],
+  ssl: {
+    rejectUnauthorized: true, 
+    ca: [fs.readFileSync('./../KafkaSetup/certs/ca.crt')],
+    key: fs.readFileSync('./../KafkaSetup/certs/server.key'), 
+    cert: fs.readFileSync('./../KafkaSetup/certs/server.crt'),
+    servername: 'kafka'
+  }
 })
 
 const producer = kafka.producer()
