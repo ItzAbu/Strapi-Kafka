@@ -7,18 +7,28 @@
 const { createCoreService } = require('@strapi/strapi').factories;
 
 const { Kafka } = require('kafkajs');
-const { keys } = require('../../../../config/middlewares');
-const { sendAt } = require('cron');
+const fs = require('fs');
 
 const kafka = new Kafka({
-  clientId: 'my-app',
-  brokers: ['localhost:9092']
+  clientId: 'js-client',
+  brokers: ['localhost:9093'],
+  ssl: {
+    rejectUnauthorized: true, 
+    ca: [fs.readFileSync('./../KafkaSetup/certs/ca.crt')],
+    key: fs.readFileSync('./../KafkaSetup/certs/server.key'), 
+    cert: fs.readFileSync('./../KafkaSetup/certs/server.crt'),
+    servername: 'kafka'
+  },
+  sasl: {
+    mechanism: 'scram-sha-256', // o 'scram-sha-512' se configurato così su Kafka
+    username: 'device1',
+    password: 'api_key_123456'
+  }
 })
 
 const producer = kafka.producer()
 
 const consumer = kafka.consumer({ groupId: 'noti-engine'});
-
 
 var lastExecutionTime = 0;
 

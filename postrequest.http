@@ -1,0 +1,11 @@
+POST http://localhost:1337/api/pubs/newPub
+Authorization: Bearer cdb2f291de692d1b1515d16ed5cd95f6dd494a724d951e3b9ff6b6e19861b64e189e885e39e7fb01660c9de7fa9c974abd99450d601f2ff8135f03427031349d0591bacb9673b74314860b1ec4371dde592a1737dc330e74ebc216c0a22c922e3ee5940f9e86bd4aa567f9e7f93acf6e9143eb57352a8efe46ba9deea5c22159
+Content-Type: application/json
+
+{
+  
+  "name": "Nuovo18",
+  "address": "Via del Vaticano",
+  "avgPrice": 19
+  
+}
